@@ -29,6 +29,8 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
     @IBOutlet private var counterLabel: UILabel!
+    @IBOutlet private var noButton: UIButton!
+    @IBOutlet private var yesButton: UIButton!
 
     // MARK: - Private Properties
 
@@ -126,6 +128,11 @@ final class MovieQuizViewController: UIViewController {
         textLabel.text = step.question
         counterLabel.text = step.questionNumber
         imageView.layer.borderWidth = 0
+        imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
+        // разблокируем кнопки после показа нового вопроса
+        noButton.isEnabled = true
+        yesButton.isEnabled = true
     }
 
     // приватный метод, который обрабатывает результат ответа
@@ -134,6 +141,10 @@ final class MovieQuizViewController: UIViewController {
         if isCorrect {
             correctAnswers += 1
         }
+
+        // блокируем кнопки чтобы пользователь не мог нажать повторно
+        noButton.isEnabled = false
+        yesButton.isEnabled = false
 
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 8
