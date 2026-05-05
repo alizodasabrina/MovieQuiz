@@ -32,6 +32,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         super.viewDidLoad()
 
         imageView.layer.cornerRadius = 20
+        imageView.backgroundColor = .ypBlack
         questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
         statisticService = StatisticService()
 
