@@ -99,6 +99,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="act-ind-01" userLabel="Activity Indicator">
+                                <rect key="frame" x="188" y="429" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
@@ -108,6 +112,8 @@
                             <constraint firstItem="main-stk-01" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="c-main-top"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="main-stk-01" secondAttribute="trailing" constant="20" id="c-main-trail"/>
                             <constraint firstItem="stk-btn-01" firstAttribute="height" constant="60" id="c-stk-h"/>
+                            <constraint firstItem="act-ind-01" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c-act-cx"/>
+                            <constraint firstItem="act-ind-01" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="c-act-cy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -115,6 +121,7 @@
                         <outlet property="imageView" destination="img-prev-01" id="iDY-dJ-lic"/>
                         <outlet property="noButton" destination="AG2-mM-kjD" id="9Tc-CU-TIC"/>
                         <outlet property="textLabel" destination="q-lbl-01" id="jfk-Tj-wzI"/>
+                        <outlet property="activityIndicator" destination="act-ind-01" id="act-ind-con"/>
                         <outlet property="yesButton" destination="DN9-k8-Szp" id="bQn-K1-ELn"/>
                     </connections>
                 </viewController>
