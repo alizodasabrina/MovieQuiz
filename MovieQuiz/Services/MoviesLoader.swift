@@ -1,10 +1,10 @@
 import Foundation
 
-protocol MoviesLoading {
+protocol MoviesLoaderProtocol {
     func loadMovies(handler: @escaping (Result<MostPopularMovies, Error>) -> Void)
 }
 
-struct MoviesLoader: MoviesLoading {
+struct MoviesLoader: MoviesLoaderProtocol {
 
     // MARK: - NetworkClient
     private let networkClient = NetworkClient()
