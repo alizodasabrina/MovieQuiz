@@ -7,7 +7,11 @@ protocol MoviesLoaderProtocol {
 struct MoviesLoader: MoviesLoaderProtocol {
 
     // MARK: - NetworkClient
-    private let networkClient = NetworkClient()
+    private let networkClient: NetworkClientProtocol
+
+    init(networkClient: NetworkClientProtocol = NetworkClient()) {
+        self.networkClient = networkClient
+    }
 
     // MARK: - URL
     private var mostPopularMoviesUrl: URL {
